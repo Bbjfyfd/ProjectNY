@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Share on WhatsApp</title>
+</head>
+<body>
+ <h1>Send a Message on WhatsApp</h1>
+ <form id="whatsappForm">
+ <textarea id="message" rows="4" cols="50" placeholder="Enter your message"></textarea><br><br>
+ <button type="button" onclick="sendMessage()">Send via WhatsApp</button>
+ </form>
+ <script>
+ function sendMessage() {
+ var message = document.getElementById('message').value;
+ if (message.trim() === '') {
+ alert('Please enter a message.');
+ return;
+ }
+ var encodedMessage = encodeURIComponent(message);
+ var whatsappURL = "https://wa.me/?text=" + encodedMessage;
+ window.open(whatsappURL, "_blank");
+ }
+ </script>
+ </body>
+ </html>
+ 
+ 
